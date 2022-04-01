@@ -1,0 +1,15 @@
+{
+  "name": "Default Browser Launcher",
+  "description": "Opens a link in DefaultBrowserLauncher.app",
+  "manifest_version": 2,
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["socket.io.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": ["redirections.json"]
+}

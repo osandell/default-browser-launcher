@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default Browser Launcher</title>
+    <script>
+      let url = window.location.href.split(
+        "default_browser_launcher.html?url="
+      )[1];
+
+      if (url.split("?").length > 0) {
+        const searchParams = new URLSearchParams("?" + url.split("?")[1]);
+        searchParams.set("wasRedirectedFromDefaultBrowserLauncher", "true");
+        url = url.split("?")[0] + "?" + searchParams.toString();
+      } else {
+        url = url + "?wasRedirectedFromDefaultBrowserLauncher=true";
+      }
+
+      const w = window.open(url);
+
+      // When the new window has loaded it will send a message to this window.
+      // At that point we send a message back and that way the new window will
+      // know it has been redirected.
+      window.addEventListener("message", function (event) {
+        if (event.data === "default_browser_launcher_question") {
+          w.postMessage("default_browser_launcher_response", "*");
+        }
+        window.close();
+      });
+
+      setTimeout(() => {
+        window.close();
+      }, 3000);
+    </script>
+  </head>
+  <body />
+</html>
