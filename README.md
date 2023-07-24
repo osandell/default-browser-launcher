@@ -29,15 +29,18 @@ Currently the routing part is written in AppleScript so only Mac compatible, but
     brew install defaultbrowser
     ```
 
-3. **Run `DefaultBrowserLauncher.app`**: Running it once makes Mac OS aware of it. Then, set it as the default browser with:
+3. **Run `DefaultBrowserLauncher.app`**: Run it once makes Mac OS aware of it. 
+
+
+4. **Set it as the default browser**:
 
     ```
     defaultbrowser DefaultBrowserLauncher
     ```
 
-4. **Modify `redirections.json`**: Adjust this file to specify the list of URLs to redirect to which browser.
+5. **Modify `redirections.json`**: Adjust this file to specify the list of URLs to redirect to which browser.
 
-5. **Install the Chrome extension**: This extension should be installed in instances of Chrome where you want to redirect certain links. To install the extension, open the Chrome extension manager and select 'Load unpacked'.
+6. **Install the Chrome extension**: This extension should be installed in instances of Chrome where you want to redirect certain links. To install the extension, open the Chrome extension manager and select 'Load unpacked'.
 
-6. **Install and run PM2 for the server**: To keep the server running on reboot, install PM2. Then, start the server with `pm2 ./server/server.js` and save it for auto-start on reboot with `pm2 save`.
+7. **Install and run PM2 for the server**: To keep the server running on reboot, install PM2. Then, start the server with `pm2 ./server/server.js` and save it for auto-start on reboot with `pm2 save`.
 
