@@ -1,17 +1,11 @@
 [
   {
-    "browser": "Google Chrome Work",
-    "urlsWhitelist": ["search.google", "prismic.io", "atlassian", "bitbucket"]
+    "browser": "FF Work",
+    "urlsWhitelist": ["search.google", "bitbucket", "github"]
   },
   {
-    "browser": "Google Chrome Dev",
-    "urlsWhitelist": ["localhost", "127.0.0.1", "azurewebsites.net"],
-    "urlsBlacklist": [
-      "search.google",
-      "prismic.io",
-      "atlassian",
-      "bitbucket",
-      "sentry.io"
-    ]
+    "browser": "Google Chrome",
+    "urlsWhitelist": ["localhost", "127.0.0.1"],
+    "urlsBlacklist": ["search.google", "bitbucket"]
   }
 ]
