@@ -35,7 +35,7 @@ Currently the routing part is written in AppleScript so only Mac compatible, but
 4. **Set it as the default browser**:
 
     ```
-    defaultbrowser DefaultBrowserLauncher
+    defaultbrowser defaultbrowserlauncher
     ```
 
 5. **Modify `redirections.json`**: Adjust this file to specify the list of URLs to redirect to which browser.
